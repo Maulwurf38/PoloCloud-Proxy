@@ -1,0 +1,4 @@
+name: PoloCloud-Proxy
+author: BauHD
+version: '1.0.0'
+main: de.polocloud.proxy.bungee.BungeeBootstrap
