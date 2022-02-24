@@ -18,8 +18,6 @@ import de.polocloud.proxy.velocity.listener.VelocityProxyPingListener;
 import de.polocloud.wrapper.Wrapper;
 import net.kyori.adventure.text.Component;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 @Plugin(id = "polocloud-proxy", name = "PoloCloud-Proxy", version = "1.0.0", authors = "BauHD")
 public final class VelocityBootstrap implements ProxyBootstrap {
 

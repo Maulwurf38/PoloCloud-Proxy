@@ -3,8 +3,7 @@ package de.polocloud.proxy;
 import de.polocloud.api.CloudAPI;
 import de.polocloud.api.json.Document;
 import de.polocloud.api.service.CloudService;
-import de.polocloud.api.service.utils.ServiceState;
-import de.polocloud.api.service.utils.ServiceVisibility;
+import de.polocloud.api.service.ServiceState;
 import de.polocloud.proxy.utils.Configuration;
 
 import java.io.File;
@@ -15,8 +14,7 @@ public interface ProxyBootstrap {
 
     default Stream<CloudService> getFallback() {
         return CloudAPI.getInstance().getServiceManager().getAllCachedServices().stream()
-                .filter(service -> service.getServiceState() == ServiceState.ONLINE)
-                .filter(service -> service.getServiceVisibility() == ServiceVisibility.VISIBLE)
+                .filter(service -> service.getState().equals(ServiceState.ONLINE))
                 .filter(service -> !service.getGroup().getGameServerVersion().isProxy())
                 .filter(service -> service.getGroup().isFallbackGroup());
     }
